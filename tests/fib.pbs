@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#PBS -l walltime=00:30:00
+#PBS -l nodes=1:ppn=8:harpertown
+
+module load intel_compiler/12.0.0.084
+
+cd $PBS_O_WORKDIR
+
+./timedrun.pl -v -t 00:00:10 ./fib $n
+
